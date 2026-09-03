@@ -124,7 +124,7 @@
 </div>
 <div class="flex flex-col gap-unit">
 <label class="font-label-sm text-label-sm text-on-surface-variant" for="vf-tel">Telefon Numarası</label>
-<input id="vf-tel" name="telefon" required inputmode="tel" class="border border-outline-variant rounded px-3 py-2 bg-transparent text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="0 (5XX) XXX XX XX" type="tel">
+<input id="vf-tel" name="telefon" required inputmode="tel" maxlength="12" class="border border-outline-variant rounded px-3 py-2 bg-transparent text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="531 255 4069" type="tel">
 <p class="vf-err hidden font-label-sm text-label-sm text-error"></p>
 </div>
 </div>
@@ -267,6 +267,20 @@ Başvuruyu Gönder<span class="material-symbols-outlined text-[18px]">send</span
   var cur = 1;
   var total = steps.length;
 
+  // Telefon: başında 0 yok, "531 255 4069" biçiminde (3-3-4) canlı gruplama
+  var tel = document.getElementById("vf-tel");
+  if (tel) {
+    tel.addEventListener("input", function () {
+      var d = tel.value.replace(/\D/g, "");
+      if (d[0] === "0") d = d.slice(1);
+      d = d.slice(0, 10);
+      var out = d.slice(0, 3);
+      if (d.length > 3) out += " " + d.slice(3, 6);
+      if (d.length > 6) out += " " + d.slice(6, 10);
+      tel.value = out;
+    });
+  }
+
   function setErr(el, msg) {
     var p = el.parentElement.querySelector(".vf-err");
     if (!p) return;
@@ -283,7 +297,7 @@ Başvuruyu Gönder<span class="material-symbols-outlined text-[18px]">send</span
         if (!el.value.trim()) { setErr(el, "Bu alan zorunludur."); ok = false; return; }
         if (el.type === "email" && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(el.value)) { setErr(el, "Geçerli bir e-posta girin."); ok = false; return; }
         if (el.name === "tc" && !/^[1-9][0-9]{10}$/.test(el.value)) { setErr(el, "11 haneli T.C. kimlik numarası girin."); ok = false; return; }
-        if (el.name === "telefon" && el.value.replace(/\D/g, "").length < 10) { setErr(el, "Geçerli bir telefon numarası girin."); ok = false; return; }
+        if (el.name === "telefon" && !/^[1-9][0-9]{9}$/.test(el.value.replace(/\D/g, ""))) { setErr(el, "Başında 0 olmadan 10 haneli numara girin."); ok = false; return; }
         setErr(el, "");
       }
     });
