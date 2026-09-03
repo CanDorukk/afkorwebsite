@@ -1,0 +1,77 @@
+<header class="sticky top-0 left-0 w-full z-50 bg-primary text-on-primary shadow-sm">
+<div class="flex justify-between items-center gap-gutter w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop h-20">
+<a class="font-headline-lg text-headline-lg font-extrabold text-on-primary shrink-0" href="/">AFKOR</a>
+<nav id="site-nav-desktop" class="hidden lg:block">
+<ul class="flex items-center gap-stack-lg font-label-md text-label-md">
+<li class="group relative" data-nav="kurumsal">
+<a class="js-top inline-flex items-center gap-1 py-6 text-on-primary font-medium hover:text-secondary-container transition-colors duration-200" href="/kurumsal/hakkimizda/">Kurumsal<span class="material-symbols-outlined text-[18px] align-middle">expand_more</span></a>
+<ul class="absolute left-0 top-full min-w-[220px] bg-surface-container-lowest border border-outline-variant rounded-lg shadow-[0_4px_10px_rgba(0,0,0,0.12)] py-2 opacity-0 invisible translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-150 z-50">
+<li><a class="block px-4 py-2 font-label-md text-label-md text-on-surface hover:bg-surface-container hover:text-primary transition-colors" href="/kurumsal/hakkimizda/">Hakkımızda</a></li>
+<li><a class="block px-4 py-2 font-label-md text-label-md text-on-surface hover:bg-surface-container hover:text-primary transition-colors" href="/kurumsal/baskanin-mesaji/">Başkanın Mesajı</a></li>
+<li><a class="block px-4 py-2 font-label-md text-label-md text-on-surface hover:bg-surface-container hover:text-primary transition-colors" href="/kurumsal/kvkk/">KVKK</a></li>
+<li><a class="block px-4 py-2 font-label-md text-label-md text-on-surface hover:bg-surface-container hover:text-primary transition-colors" href="/kurumsal/hesap-numaralari/">Hesap Numaralarımız</a></li>
+<li><a class="block px-4 py-2 font-label-md text-label-md text-on-surface hover:bg-surface-container hover:text-primary transition-colors" href="/kurumsal/sikca-sorulan-sorular/">Sıkça Sorulan Sorular</a></li>
+</ul>
+</li>
+<li class="group relative" data-nav="projelerimiz">
+<a class="js-top inline-flex items-center gap-1 py-6 text-on-primary font-medium hover:text-secondary-container transition-colors duration-200" href="/projelerimiz/zatu/">Projelerimiz<span class="material-symbols-outlined text-[18px] align-middle">expand_more</span></a>
+<ul class="absolute left-0 top-full min-w-[220px] bg-surface-container-lowest border border-outline-variant rounded-lg shadow-[0_4px_10px_rgba(0,0,0,0.12)] py-2 opacity-0 invisible translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-150 z-50">
+<li><a class="block px-4 py-2 font-label-md text-label-md text-on-surface hover:bg-surface-container hover:text-primary transition-colors" href="/projelerimiz/zatu/">ZATU</a></li>
+</ul>
+</li>
+<li class="group relative" data-nav="medya">
+<a class="js-top inline-flex items-center gap-1 py-6 text-on-primary font-medium hover:text-secondary-container transition-colors duration-200" href="/medya/basin/">Medya<span class="material-symbols-outlined text-[18px] align-middle">expand_more</span></a>
+<ul class="absolute left-0 top-full min-w-[220px] bg-surface-container-lowest border border-outline-variant rounded-lg shadow-[0_4px_10px_rgba(0,0,0,0.12)] py-2 opacity-0 invisible translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-150 z-50">
+<li><a class="block px-4 py-2 font-label-md text-label-md text-on-surface hover:bg-surface-container hover:text-primary transition-colors" href="/medya/basin/">Basın</a></li>
+<li><a class="block px-4 py-2 font-label-md text-label-md text-on-surface hover:bg-surface-container hover:text-primary transition-colors" href="/medya/dokumanlar/">Dökümanlar</a></li>
+<li><a class="block px-4 py-2 font-label-md text-label-md text-on-surface hover:bg-surface-container hover:text-primary transition-colors" href="/medya/galeri/">Galeri</a></li>
+</ul>
+</li>
+<li class="group relative" data-nav="gonullu-ol">
+<a class="js-top inline-flex items-center gap-1 py-6 text-on-primary font-medium hover:text-secondary-container transition-colors duration-200" href="/gonullu-ol/">Gönüllü Ol</a>
+</li>
+<li class="group relative" data-nav="iletisim">
+<a class="js-top inline-flex items-center gap-1 py-6 text-on-primary font-medium hover:text-secondary-container transition-colors duration-200" href="/iletisim/">İletişim</a>
+</li>
+</ul>
+</nav>
+<div class="flex items-center gap-stack-md">
+<a id="site-cta-desktop" class="hidden lg:inline-flex shrink-0 bg-secondary-container hover:bg-secondary text-on-secondary font-label-md text-label-md px-6 py-3 rounded transition-colors" href="/bagis/">Bağış / Destek</a>
+<button id="mobile-toggle" aria-label="Menü" class="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded text-on-primary hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+<!-- Mobil menü (varsayilan kapali; hamburger acar, alt menuler tiklaninca acilir) -->
+<div id="mobile-menu" class="lg:hidden border-t border-white/10 bg-primary px-margin-mobile py-stack-sm">
+<ul class="flex flex-col font-label-md text-label-md divide-y divide-white/10">
+<li class="mm-group">
+<button type="button" class="mm-toggle w-full flex justify-between items-center py-4 text-on-primary">Kurumsal<span class="material-symbols-outlined transition-transform">expand_more</span></button>
+<ul class="mm-sub pb-2">
+<li><a class="block py-2 pl-4 text-on-primary-container hover:text-on-primary" href="/kurumsal/hakkimizda/">Hakkımızda</a></li>
+<li><a class="block py-2 pl-4 text-on-primary-container hover:text-on-primary" href="/kurumsal/baskanin-mesaji/">Başkanın Mesajı</a></li>
+<li><a class="block py-2 pl-4 text-on-primary-container hover:text-on-primary" href="/kurumsal/kvkk/">KVKK</a></li>
+<li><a class="block py-2 pl-4 text-on-primary-container hover:text-on-primary" href="/kurumsal/hesap-numaralari/">Hesap Numaralarımız</a></li>
+<li><a class="block py-2 pl-4 text-on-primary-container hover:text-on-primary" href="/kurumsal/sikca-sorulan-sorular/">Sıkça Sorulan Sorular</a></li>
+</ul>
+</li>
+<li class="mm-group">
+<button type="button" class="mm-toggle w-full flex justify-between items-center py-4 text-on-primary">Projelerimiz<span class="material-symbols-outlined transition-transform">expand_more</span></button>
+<ul class="mm-sub pb-2">
+<li><a class="block py-2 pl-4 text-on-primary-container hover:text-on-primary" href="/projelerimiz/zatu/">ZATU</a></li>
+</ul>
+</li>
+<li class="mm-group">
+<button type="button" class="mm-toggle w-full flex justify-between items-center py-4 text-on-primary">Medya<span class="material-symbols-outlined transition-transform">expand_more</span></button>
+<ul class="mm-sub pb-2">
+<li><a class="block py-2 pl-4 text-on-primary-container hover:text-on-primary" href="/medya/basin/">Basın</a></li>
+<li><a class="block py-2 pl-4 text-on-primary-container hover:text-on-primary" href="/medya/dokumanlar/">Dökümanlar</a></li>
+<li><a class="block py-2 pl-4 text-on-primary-container hover:text-on-primary" href="/medya/galeri/">Galeri</a></li>
+</ul>
+</li>
+<li><a class="block py-4 text-on-primary" href="/gonullu-ol/">Gönüllü Ol</a></li>
+<li><a class="block py-4 text-on-primary" href="/iletisim/">İletişim</a></li>
+<li class="pt-stack-sm"><a class="block bg-secondary-container text-on-secondary text-center py-3 rounded font-bold" href="/bagis/">Bağış / Destek</a></li>
+</ul>
+</div>
+</header>

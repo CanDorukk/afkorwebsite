@@ -1,0 +1,40 @@
+body { font-family: 'Inter', sans-serif; background-color: #f8f9ff; }
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+.material-symbols-outlined.fill { font-variation-settings: 'FILL' 1; }
+
+/* --- SSS akordeon (mockup <style>'inden tasindi) --- */
+.accordion-content { transition: max-height .3s ease-in-out, opacity .3s ease-in-out; max-height: 0; opacity: 0; overflow: hidden; }
+.accordion-content.open { max-height: 1200px; opacity: 1; }
+
+[hidden] { display: none !important; }
+
+/* --- <details> SSS oklari (ZATU sayfasi) --- */
+details > summary { list-style: none; cursor: pointer; }
+details > summary::-webkit-details-marker { display: none; }
+
+/* --- Galeri masonry (mockup <style>'inden tasindi) --- */
+.masonry-grid { column-count: 1; column-gap: 24px; }
+@media (min-width: 768px) { .masonry-grid { column-count: 2; } }
+@media (min-width: 1024px) { .masonry-grid { column-count: 3; } }
+.masonry-item { break-inside: avoid; margin-bottom: 24px; }
+
+/* --- Header: Tailwind CDN yuklenene kadar da dogru davranis --- */
+#mobile-menu { display: none; }
+#mobile-menu.is-open { display: block; }
+#mobile-menu .mm-sub { display: none; }
+#mobile-menu .mm-group.open .mm-sub { display: block; }
+#mobile-menu .mm-group.open .mm-toggle .material-symbols-outlined { transform: rotate(180deg); }
+@media (min-width: 1024px) { #mobile-menu, #mobile-toggle { display: none !important; } }
+@media (max-width: 1023px) { #site-nav-desktop, #site-cta-desktop { display: none !important; } }

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html class="light" lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hesap Numaralarımız | AFKOR</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="/assets/js/tailwind.config.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=block">
+<link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col" data-active="kurumsal">
+<div id="site-header"></div>
+<!-- Main Content Area -->
+<main class="flex-grow">
+<section class="w-full bg-surface border-b border-outline-variant">
+<div class="w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col gap-stack-sm">
+<nav class="flex flex-wrap items-center gap-2 font-label-sm text-label-sm text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="/">Anasayfa</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="/kurumsal/hakkimizda/">Kurumsal</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface font-medium">Hesap Numaralarımız</span>
+</nav>
+<h1 class="font-headline-lg md:font-headline-xl text-headline-lg md:text-headline-xl text-primary-container">Hesap Numaralarımız</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">Afet bölgelerindeki acil ihtiyaçları karşılamak ve uzun vadeli iyileştirme çalışmalarımıza destek olmak için aşağıdaki resmi hesap numaralarımızı kullanarak bağış yapabilirsiniz.</p>
+</div>
+</section>
+<div class="w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg space-y-stack-lg">
+<!-- Donation Method Selector (Tabs) -->
+<section>
+<div class="border-b border-outline-variant">
+<ul class="flex flex-wrap -mb-px text-center font-label-md text-label-md" role="tablist">
+<li class="mr-2" role="presentation">
+<button aria-selected="true" class="inline-block p-4 border-b-2 border-secondary-container text-secondary-container rounded-t-lg active" id="tab-havale" role="tab" type="button">Banka Havale / EFT</button>
+</li>
+<li class="mr-2" role="presentation">
+<button aria-selected="false" class="inline-block p-4 border-b-2 border-transparent text-on-surface-variant hover:text-primary hover:border-outline-variant rounded-t-lg transition-colors" id="tab-kredi" role="tab" type="button">Online Kredi Kartı</button>
+</li>
+<li class="mr-2" role="presentation">
+<button aria-selected="false" class="inline-block p-4 border-b-2 border-transparent text-on-surface-variant hover:text-primary hover:border-outline-variant rounded-t-lg transition-colors" id="tab-sms" role="tab" type="button">SMS Bağışı</button>
+</li>
+<li role="presentation">
+<button aria-selected="false" class="inline-block p-4 border-b-2 border-transparent text-on-surface-variant hover:text-primary hover:border-outline-variant rounded-t-lg transition-colors" id="tab-ayni" role="tab" type="button">Ayni / Ekipman Desteği</button>
+</li>
+</ul>
+</div>
+</section>
+<!-- Bank Account Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Bank Card 1 -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-lg p-stack-md hover:shadow-md transition-shadow duration-300 flex flex-col h-full">
+<div class="flex items-center space-x-4 mb-4 pb-4 border-b border-outline-variant">
+<div class="w-12 h-12 rounded bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary-container">Ziraat Bankası</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Ulusal Afet Koordinasyon Derneği</p>
+</div>
+</div>
+<div class="space-y-4 flex-grow">
+<!-- TL Account -->
+<div>
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">TL Hesabı</span>
+</div>
+<div class="flex items-center justify-between bg-surface-container-low border border-outline-variant rounded px-3 py-2">
+<span class="font-body-md text-body-md text-on-surface tracking-tight truncate mr-2">TR12 0001 0000 0000 0000 0000 01</span>
+<button class="text-on-surface-variant hover:text-secondary-container transition-colors" title="Kopyala">
+<span class="material-symbols-outlined text-[20px]">content_copy</span>
+</button>
+</div>
+</div>
+<!-- USD Account -->
+<div>
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">USD Hesabı</span>
+</div>
+<div class="flex items-center justify-between bg-surface-container-low border border-outline-variant rounded px-3 py-2">
+<span class="font-body-md text-body-md text-on-surface tracking-tight truncate mr-2">TR34 0001 0000 0000 0000 0000 02</span>
+<button class="text-on-surface-variant hover:text-secondary-container transition-colors" title="Kopyala">
+<span class="material-symbols-outlined text-[20px]">content_copy</span>
+</button>
+</div>
+</div>
+<!-- EUR Account -->
+<div>
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">EUR Hesabı</span>
+</div>
+<div class="flex items-center justify-between bg-surface-container-low border border-outline-variant rounded px-3 py-2">
+<span class="font-body-md text-body-md text-on-surface tracking-tight truncate mr-2">TR56 0001 0000 0000 0000 0000 03</span>
+<button class="text-on-surface-variant hover:text-secondary-container transition-colors" title="Kopyala">
+<span class="material-symbols-outlined text-[20px]">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-outline-variant flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">SWIFT Kodu:</span>
+<span class="font-label-md text-label-md text-primary-container font-bold">TCZBIS</span>
+</div>
+</article>
+<!-- Bank Card 2 -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-lg p-stack-md hover:shadow-md transition-shadow duration-300 flex flex-col h-full">
+<div class="flex items-center space-x-4 mb-4 pb-4 border-b border-outline-variant">
+<div class="w-12 h-12 rounded bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary-container">Vakıfbank</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Ulusal Afet Koordinasyon Derneği</p>
+</div>
+</div>
+<div class="space-y-4 flex-grow">
+<!-- TL Account -->
+<div>
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">TL Hesabı</span>
+</div>
+<div class="flex items-center justify-between bg-surface-container-low border border-outline-variant rounded px-3 py-2">
+<span class="font-body-md text-body-md text-on-surface tracking-tight truncate mr-2">TR78 0015 0000 0000 0000 0000 01</span>
+<button class="text-on-surface-variant hover:text-secondary-container transition-colors" title="Kopyala">
+<span class="material-symbols-outlined text-[20px]">content_copy</span>
+</button>
+</div>
+</div>
+<!-- USD Account -->
+<div>
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">USD Hesabı</span>
+</div>
+<div class="flex items-center justify-between bg-surface-container-low border border-outline-variant rounded px-3 py-2">
+<span class="font-body-md text-body-md text-on-surface tracking-tight truncate mr-2">TR90 0015 0000 0000 0000 0000 02</span>
+<button class="text-on-surface-variant hover:text-secondary-container transition-colors" title="Kopyala">
+<span class="material-symbols-outlined text-[20px]">content_copy</span>
+</button>
+</div>
+</div>
+<!-- EUR Account -->
+<div>
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">EUR Hesabı</span>
+</div>
+<div class="flex items-center justify-between bg-surface-container-low border border-outline-variant rounded px-3 py-2">
+<span class="font-body-md text-body-md text-on-surface tracking-tight truncate mr-2">TR12 0015 0000 0000 0000 0000 03</span>
+<button class="text-on-surface-variant hover:text-secondary-container transition-colors" title="Kopyala">
+<span class="material-symbols-outlined text-[20px]">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-outline-variant flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">SWIFT Kodu:</span>
+<span class="font-label-md text-label-md text-primary-container font-bold">VKFBIS</span>
+</div>
+</article>
+<!-- Bank Card 3 -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-lg p-stack-md hover:shadow-md transition-shadow duration-300 flex flex-col h-full">
+<div class="flex items-center space-x-4 mb-4 pb-4 border-b border-outline-variant">
+<div class="w-12 h-12 rounded bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary-container">İş Bankası</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Ulusal Afet Koordinasyon Derneği</p>
+</div>
+</div>
+<div class="space-y-4 flex-grow">
+<!-- TL Account -->
+<div>
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">TL Hesabı</span>
+</div>
+<div class="flex items-center justify-between bg-surface-container-low border border-outline-variant rounded px-3 py-2">
+<span class="font-body-md text-body-md text-on-surface tracking-tight truncate mr-2">TR34 0064 0000 0000 0000 0000 01</span>
+<button class="text-on-surface-variant hover:text-secondary-container transition-colors" title="Kopyala">
+<span class="material-symbols-outlined text-[20px]">content_copy</span>
+</button>
+</div>
+</div>
+<!-- USD Account -->
+<div>
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">USD Hesabı</span>
+</div>
+<div class="flex items-center justify-between bg-surface-container-low border border-outline-variant rounded px-3 py-2">
+<span class="font-body-md text-body-md text-on-surface tracking-tight truncate mr-2">TR56 0064 0000 0000 0000 0000 02</span>
+<button class="text-on-surface-variant hover:text-secondary-container transition-colors" title="Kopyala">
+<span class="material-symbols-outlined text-[20px]">content_copy</span>
+</button>
+</div>
+</div>
+<!-- EUR Account -->
+<div>
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">EUR Hesabı</span>
+</div>
+<div class="flex items-center justify-between bg-surface-container-low border border-outline-variant rounded px-3 py-2">
+<span class="font-body-md text-body-md text-on-surface tracking-tight truncate mr-2">TR78 0064 0000 0000 0000 0000 03</span>
+<button class="text-on-surface-variant hover:text-secondary-container transition-colors" title="Kopyala">
+<span class="material-symbols-outlined text-[20px]">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-outline-variant flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">SWIFT Kodu:</span>
+<span class="font-label-md text-label-md text-primary-container font-bold">ISBKBIS</span>
+</div>
+</article>
+</section>
+<!-- SMS Donation Banner -->
+<section class="bg-secondary-container rounded-xl p-stack-lg relative overflow-hidden flex flex-col md:flex-row items-center justify-between">
+<!-- Decorative background element -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 100% 50%, #fff 0%, transparent 50%);"></div>
+<div class="relative z-10 text-on-primary text-center md:text-left mb-6 md:mb-0">
+<h2 class="font-headline-lg text-headline-lg font-bold mb-2">Hızlı ve Kolay SMS Bağışı</h2>
+<p class="font-body-lg text-body-lg opacity-90 max-w-2xl">
+                    Acil durumlarda en hızlı desteği sağlamak için operatörünüzden SMS göndererek bağışta bulunabilirsiniz.
+                </p>
+</div>
+<div class="relative z-10 flex flex-col items-center">
+<div class="bg-surface-container-lowest text-secondary-container font-headline-xl text-headline-xl font-bold py-4 px-8 rounded-lg shadow-lg mb-2">
+                    DESTEK <span class="text-primary-container text-[32px] font-headline-lg align-middle mx-2">yaz</span> 3072
+                </div>
+<p class="text-on-primary font-label-md text-label-md bg-black/20 px-4 py-1 rounded-full backdrop-blur-sm">
+                    1 SMS Bedeli: 20 TL
+                </p>
+</div>
+</section>
+<!-- Official Permission Badge -->
+<section class="bg-surface-container-low border border-outline-variant rounded-lg p-stack-md flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6">
+<div class="w-16 h-16 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary-container mb-1">Resmi İzinli ve Denetlenen Kurum</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Ulusal Afet Koordinasyon Derneği, T.C. İçişleri Bakanlığı Sivil Toplumla İlişkiler Genel Müdürlüğü tarafından <strong>34-123-456</strong> kütük numarası ile onaylanmış, düzenli olarak denetlenen resmi bir kuruluştur. Bağışlarınız şeffaflık ilkelerine uygun olarak ihtiyaç sahiplerine ulaştırılmaktadır.
+                </p>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<div id="site-footer"></div>
+<script src="/assets/js/site.js"></script>
+</body>
+</html>
