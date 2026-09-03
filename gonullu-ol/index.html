@@ -70,69 +70,306 @@
 <div class="lg:col-span-8 flex flex-col gap-stack-lg">
 <div class="bg-surface-container-lowest border border-outline-variant rounded p-stack-lg shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]">
 <!-- Wizard Header / Step Indicator -->
-<div class="flex justify-between items-center mb-stack-lg border-b border-outline-variant pb-stack-md">
-<div class="flex items-center gap-2">
-<div class="w-8 h-8 rounded-full bg-secondary-container text-on-primary flex items-center justify-center font-label-md">1</div>
-<span class="font-label-md text-primary hidden sm:block">Kişisel Bilgiler</span>
+<div id="vf-steps" class="flex justify-between items-center mb-stack-lg border-b border-outline-variant pb-stack-md">
+<div class="flex items-center gap-2" data-step-ind="1">
+<div class="vf-dot w-8 h-8 rounded-full bg-secondary-container text-on-primary flex items-center justify-center font-label-md">1</div>
+<span class="vf-lbl font-label-md text-primary hidden sm:block">Kişisel Bilgiler</span>
 </div>
 <div class="flex-grow border-t border-outline-variant mx-4"></div>
-<div class="flex items-center gap-2 opacity-50">
-<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant text-on-surface-variant flex items-center justify-center font-label-md">2</div>
-<span class="font-label-md text-on-surface-variant hidden sm:block">Uzmanlık &amp; Yetkinlikler</span>
+<div class="flex items-center gap-2 opacity-50" data-step-ind="2">
+<div class="vf-dot w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant text-on-surface-variant flex items-center justify-center font-label-md">2</div>
+<span class="vf-lbl font-label-md text-on-surface-variant hidden sm:block">Uzmanlık &amp; Yetkinlikler</span>
 </div>
 <div class="flex-grow border-t border-outline-variant mx-4"></div>
-<div class="flex items-center gap-2 opacity-50">
-<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant text-on-surface-variant flex items-center justify-center font-label-md">3</div>
-<span class="font-label-md text-on-surface-variant hidden sm:block">Müsaitlik &amp; Onay</span>
+<div class="flex items-center gap-2 opacity-50" data-step-ind="3">
+<div class="vf-dot w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant text-on-surface-variant flex items-center justify-center font-label-md">3</div>
+<span class="vf-lbl font-label-md text-on-surface-variant hidden sm:block">Müsaitlik &amp; Onay</span>
 </div>
 </div>
-<!-- Step 1 Form -->
-<form class="flex flex-col gap-stack-md">
+
+<form id="vf-form" class="flex flex-col gap-stack-md" novalidate>
+
+<!-- Step 1 -->
+<div class="vf-step flex flex-col gap-stack-md" data-step="1">
 <h3 class="font-headline-md text-headline-md text-primary mb-stack-sm">Kişisel Bilgiler</h3>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-gutter">
 <div class="flex flex-col gap-unit">
-<label class="font-label-sm text-label-sm text-on-surface-variant">Ad</label>
-<input class="border border-outline-variant rounded px-3 py-2 bg-transparent text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="Adınız" type="text">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="vf-ad">Ad</label>
+<input id="vf-ad" name="ad" required class="border border-outline-variant rounded px-3 py-2 bg-transparent text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="Adınız" type="text">
+<p class="vf-err hidden font-label-sm text-label-sm text-error"></p>
 </div>
 <div class="flex flex-col gap-unit">
-<label class="font-label-sm text-label-sm text-on-surface-variant">Soyad</label>
-<input class="border border-outline-variant rounded px-3 py-2 bg-transparent text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="Soyadınız" type="text">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="vf-soyad">Soyad</label>
+<input id="vf-soyad" name="soyad" required class="border border-outline-variant rounded px-3 py-2 bg-transparent text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="Soyadınız" type="text">
+<p class="vf-err hidden font-label-sm text-label-sm text-error"></p>
 </div>
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-gutter">
 <div class="flex flex-col gap-unit">
-<label class="font-label-sm text-label-sm text-on-surface-variant">T.C. Kimlik No</label>
-<input class="border border-outline-variant rounded px-3 py-2 bg-transparent text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="11 Haneli T.C. Kimlik Numaranız" type="text">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="vf-tc">T.C. Kimlik No</label>
+<input id="vf-tc" name="tc" required inputmode="numeric" maxlength="11" pattern="[0-9]{11}" class="border border-outline-variant rounded px-3 py-2 bg-transparent text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="11 Haneli T.C. Kimlik Numaranız" type="text">
+<p class="vf-err hidden font-label-sm text-label-sm text-error"></p>
 </div>
 <div class="flex flex-col gap-unit">
-<label class="font-label-sm text-label-sm text-on-surface-variant">Doğum Tarihi</label>
-<input class="border border-outline-variant rounded px-3 py-2 bg-transparent text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" type="date">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="vf-dogum">Doğum Tarihi</label>
+<input id="vf-dogum" name="dogum" required class="border border-outline-variant rounded px-3 py-2 bg-transparent text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" type="date">
+<p class="vf-err hidden font-label-sm text-label-sm text-error"></p>
 </div>
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-gutter">
 <div class="flex flex-col gap-unit">
-<label class="font-label-sm text-label-sm text-on-surface-variant">İl</label>
-<select class="border border-outline-variant rounded px-3 py-2 bg-transparent text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors">
-<option>Seçiniz</option>
-<option>İstanbul</option>
-<option>Ankara</option>
-<option>İzmir</option>
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="vf-eposta">E-posta</label>
+<input id="vf-eposta" name="eposta" required class="border border-outline-variant rounded px-3 py-2 bg-transparent text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="ornek@eposta.com" type="email">
+<p class="vf-err hidden font-label-sm text-label-sm text-error"></p>
+</div>
+<div class="flex flex-col gap-unit">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="vf-tel">Telefon Numarası</label>
+<input id="vf-tel" name="telefon" required inputmode="tel" class="border border-outline-variant rounded px-3 py-2 bg-transparent text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="0 (5XX) XXX XX XX" type="tel">
+<p class="vf-err hidden font-label-sm text-label-sm text-error"></p>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-gutter">
+<div class="flex flex-col gap-unit">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="vf-il">İl</label>
+<select id="vf-il" name="il" required class="border border-outline-variant rounded px-3 py-2 bg-transparent text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors">
+<option value="">Seçiniz</option>
+<option>Adana</option><option>Ankara</option><option>Antalya</option><option>Bursa</option>
+<option>Diyarbakır</option><option>Gaziantep</option><option>Hatay</option><option>İstanbul</option>
+<option>İzmir</option><option>Kahramanmaraş</option><option>Kayseri</option><option>Kocaeli</option>
+<option>Konya</option><option>Malatya</option><option>Mersin</option><option>Samsun</option>
+<option>Şanlıurfa</option><option>Trabzon</option><option>Van</option><option>Diğer</option>
+</select>
+<p class="vf-err hidden font-label-sm text-label-sm text-error"></p>
+</div>
+</div>
+</div>
+
+<!-- Step 2 -->
+<div class="vf-step hidden flex-col gap-stack-md" data-step="2">
+<h3 class="font-headline-md text-headline-md text-primary mb-stack-sm">Uzmanlık &amp; Yetkinlikler</h3>
+<div class="flex flex-col gap-unit">
+<span class="font-label-sm text-label-sm text-on-surface-variant">İlgilendiğiniz alanlar (en az bir tane)</span>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-1">
+<label class="flex items-center gap-2 font-body-md text-body-md text-primary"><input type="checkbox" name="alanlar" value="Saha operasyonları" class="rounded border-outline-variant text-primary focus:ring-primary">Saha operasyonları</label>
+<label class="flex items-center gap-2 font-body-md text-body-md text-primary"><input type="checkbox" name="alanlar" value="Lojistik &amp; ikmal" class="rounded border-outline-variant text-primary focus:ring-primary">Lojistik &amp; ikmal</label>
+<label class="flex items-center gap-2 font-body-md text-body-md text-primary"><input type="checkbox" name="alanlar" value="İletişim &amp; medya" class="rounded border-outline-variant text-primary focus:ring-primary">İletişim &amp; medya</label>
+<label class="flex items-center gap-2 font-body-md text-body-md text-primary"><input type="checkbox" name="alanlar" value="Psikososyal destek" class="rounded border-outline-variant text-primary focus:ring-primary">Psikososyal destek</label>
+<label class="flex items-center gap-2 font-body-md text-body-md text-primary"><input type="checkbox" name="alanlar" value="Sağlık &amp; ilk yardım" class="rounded border-outline-variant text-primary focus:ring-primary">Sağlık &amp; ilk yardım</label>
+<label class="flex items-center gap-2 font-body-md text-body-md text-primary"><input type="checkbox" name="alanlar" value="Bağış organizasyonu" class="rounded border-outline-variant text-primary focus:ring-primary">Bağış organizasyonu</label>
+<label class="flex items-center gap-2 font-body-md text-body-md text-primary"><input type="checkbox" name="alanlar" value="Yazılım &amp; teknoloji" class="rounded border-outline-variant text-primary focus:ring-primary">Yazılım &amp; teknoloji</label>
+<label class="flex items-center gap-2 font-body-md text-body-md text-primary"><input type="checkbox" name="alanlar" value="Çeviri &amp; tercüme" class="rounded border-outline-variant text-primary focus:ring-primary">Çeviri &amp; tercüme</label>
+</div>
+<p class="vf-err hidden font-label-sm text-label-sm text-error"></p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-gutter">
+<div class="flex flex-col gap-unit">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="vf-deneyim">Afet / gönüllülük deneyimi</label>
+<select id="vf-deneyim" name="deneyim" required class="border border-outline-variant rounded px-3 py-2 bg-transparent text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors">
+<option value="">Seçiniz</option>
+<option>Deneyimim yok</option>
+<option>1 yıldan az</option>
+<option>1-3 yıl</option>
+<option>3 yıldan fazla</option>
+</select>
+<p class="vf-err hidden font-label-sm text-label-sm text-error"></p>
+</div>
+<div class="flex flex-col gap-unit">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="vf-ehliyet">Sürücü belgesi</label>
+<select id="vf-ehliyet" name="ehliyet" class="border border-outline-variant rounded px-3 py-2 bg-transparent text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors">
+<option value="">Seçiniz</option>
+<option>Yok</option><option>B sınıfı</option><option>C / D / E sınıfı</option>
 </select>
 </div>
+</div>
 <div class="flex flex-col gap-unit">
-<label class="font-label-sm text-label-sm text-on-surface-variant">Telefon Numarası</label>
-<input class="border border-outline-variant rounded px-3 py-2 bg-transparent text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="0 (5XX) XXX XX XX" type="tel">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="vf-sertifika">Sertifika ve eğitimler (isteğe bağlı)</label>
+<textarea id="vf-sertifika" name="sertifika" rows="3" class="border border-outline-variant rounded px-3 py-2 bg-transparent text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="AKUT, ilk yardım, arama-kurtarma, HAM telsiz vb."></textarea>
 </div>
 </div>
-<div class="flex justify-end mt-stack-md">
-<button class="bg-primary-container text-on-primary px-6 py-2 rounded font-label-md hover:bg-opacity-90 transition-opacity flex items-center gap-2" type="button">
-                            İleri
-                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+
+<!-- Step 3 -->
+<div class="vf-step hidden flex-col gap-stack-md" data-step="3">
+<h3 class="font-headline-md text-headline-md text-primary mb-stack-sm">Müsaitlik &amp; Onay</h3>
+<div class="flex flex-col gap-unit">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Ne zaman müsaitsiniz? (en az bir tane)</span>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-1">
+<label class="flex items-center gap-2 font-body-md text-body-md text-primary"><input type="checkbox" name="musaitlik" value="Hafta içi gündüz" class="rounded border-outline-variant text-primary focus:ring-primary">Hafta içi gündüz</label>
+<label class="flex items-center gap-2 font-body-md text-body-md text-primary"><input type="checkbox" name="musaitlik" value="Hafta içi akşam" class="rounded border-outline-variant text-primary focus:ring-primary">Hafta içi akşam</label>
+<label class="flex items-center gap-2 font-body-md text-body-md text-primary"><input type="checkbox" name="musaitlik" value="Hafta sonu" class="rounded border-outline-variant text-primary focus:ring-primary">Hafta sonu</label>
+<label class="flex items-center gap-2 font-body-md text-body-md text-primary"><input type="checkbox" name="musaitlik" value="Acil durumda 7/24" class="rounded border-outline-variant text-primary focus:ring-primary">Acil durumda 7/24</label>
+</div>
+<p class="vf-err hidden font-label-sm text-label-sm text-error"></p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-gutter">
+<div class="flex flex-col gap-unit">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="vf-saat">Haftalık ayırabileceğiniz süre</label>
+<select id="vf-saat" name="saat" required class="border border-outline-variant rounded px-3 py-2 bg-transparent text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors">
+<option value="">Seçiniz</option>
+<option>1-3 saat</option><option>4-8 saat</option><option>8 saatten fazla</option>
+</select>
+<p class="vf-err hidden font-label-sm text-label-sm text-error"></p>
+</div>
+<div class="flex flex-col gap-unit">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="vf-sehirdisi">Şehir dışı görevlendirme</label>
+<select id="vf-sehirdisi" name="sehirdisi" required class="border border-outline-variant rounded px-3 py-2 bg-transparent text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors">
+<option value="">Seçiniz</option>
+<option>Evet, katılabilirim</option>
+<option>Duruma göre</option>
+<option>Hayır</option>
+</select>
+<p class="vf-err hidden font-label-sm text-label-sm text-error"></p>
+</div>
+</div>
+<div class="flex flex-col gap-2 mt-stack-sm">
+<label class="flex items-start gap-2 font-body-md text-body-md text-primary"><input type="checkbox" name="kvkk" required class="mt-1 rounded border-outline-variant text-primary focus:ring-primary"><span>Kişisel verilerimin AFKOR gönüllü süreçleri kapsamında işlenmesine ilişkin <a href="#" class="text-primary underline">aydınlatma metnini</a> okudum, onaylıyorum.</span></label>
+<p class="vf-err hidden font-label-sm text-label-sm text-error"></p>
+<label class="flex items-start gap-2 font-body-md text-body-md text-primary"><input type="checkbox" name="sartlar" required class="mt-1 rounded border-outline-variant text-primary focus:ring-primary"><span>AFKOR gönüllülük ilke ve şartlarını kabul ediyorum.</span></label>
+<p class="vf-err hidden font-label-sm text-label-sm text-error"></p>
+</div>
+</div>
+
+<!-- Nav buttons -->
+<div class="flex justify-between items-center mt-stack-md pt-stack-md border-t border-outline-variant">
+<button id="vf-prev" type="button" class="px-6 py-2 rounded font-label-md border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-colors flex items-center gap-2 invisible">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>Geri
+</button>
+<button id="vf-next" type="button" class="bg-primary-container text-on-primary px-6 py-2 rounded font-label-md hover:bg-opacity-90 transition-opacity flex items-center gap-2">
+İleri<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<button id="vf-submit" type="submit" class="hidden bg-primary-container text-on-primary px-6 py-2 rounded font-label-md hover:bg-opacity-90 transition-opacity items-center gap-2">
+Başvuruyu Gönder<span class="material-symbols-outlined text-[18px]">send</span>
 </button>
 </div>
 </form>
+
+<!-- Success (demo) -->
+<div id="vf-success" class="hidden flex-col items-center text-center gap-stack-md py-stack-lg">
+<span class="material-symbols-outlined text-primary text-[56px]">check_circle</span>
+<h3 class="font-headline-md text-headline-md text-primary">Başvurunuz alındı</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Teşekkürler! Ekibimiz başvurunuzu değerlendirip ön mülakat için sizinle iletişime geçecek. <span class="font-medium">(Demo: form bir sunucuya gönderilmedi.)</span></p>
+<pre id="vf-summary" class="text-left w-full max-w-lg bg-surface-container rounded p-4 font-label-sm text-label-sm text-on-surface-variant overflow-x-auto"></pre>
+<button id="vf-restart" type="button" class="px-6 py-2 rounded font-label-md border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-colors">Yeni başvuru</button>
 </div>
 </div>
+</div>
+
+<script>
+(function () {
+  var form = document.getElementById("vf-form");
+  if (!form) return;
+  var steps = Array.prototype.slice.call(form.querySelectorAll(".vf-step"));
+  var inds = Array.prototype.slice.call(document.querySelectorAll("#vf-steps [data-step-ind]"));
+  var prevBtn = document.getElementById("vf-prev");
+  var nextBtn = document.getElementById("vf-next");
+  var submitBtn = document.getElementById("vf-submit");
+  var success = document.getElementById("vf-success");
+  var summary = document.getElementById("vf-summary");
+  var cur = 1;
+  var total = steps.length;
+
+  function setErr(el, msg) {
+    var p = el.parentElement.querySelector(".vf-err");
+    if (!p) return;
+    if (msg) { p.textContent = msg; p.classList.remove("hidden"); el.classList.add("border-error"); }
+    else { p.textContent = ""; p.classList.add("hidden"); el.classList.remove("border-error"); }
+  }
+
+  function validateStep(n) {
+    var step = steps[n - 1];
+    var ok = true;
+    step.querySelectorAll("input, select, textarea").forEach(function (el) {
+      if (el.type === "checkbox" || el.type === "radio") return;
+      if (el.hasAttribute("required")) {
+        if (!el.value.trim()) { setErr(el, "Bu alan zorunludur."); ok = false; return; }
+        if (el.type === "email" && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(el.value)) { setErr(el, "Geçerli bir e-posta girin."); ok = false; return; }
+        if (el.name === "tc" && !/^[1-9][0-9]{10}$/.test(el.value)) { setErr(el, "11 haneli T.C. kimlik numarası girin."); ok = false; return; }
+        if (el.name === "telefon" && el.value.replace(/\D/g, "").length < 10) { setErr(el, "Geçerli bir telefon numarası girin."); ok = false; return; }
+        setErr(el, "");
+      }
+    });
+    // checkbox groups requiring at least one
+    [["alanlar", 2], ["musaitlik", 3]].forEach(function (g) {
+      if (g[1] !== n) return;
+      var boxes = step.querySelectorAll('input[name="' + g[0] + '"]');
+      if (!boxes.length) return;
+      var any = Array.prototype.some.call(boxes, function (b) { return b.checked; });
+      var p = boxes[0].closest(".flex.flex-col").querySelector(".vf-err");
+      if (p) { if (any) { p.classList.add("hidden"); } else { p.textContent = "En az bir seçenek işaretleyin."; p.classList.remove("hidden"); } }
+      if (!any) ok = false;
+    });
+    // required consent checkboxes (step 3)
+    if (n === 3) {
+      ["kvkk", "sartlar"].forEach(function (nm) {
+        var cb = step.querySelector('input[name="' + nm + '"]');
+        var p = cb.closest("label").nextElementSibling;
+        if (!cb.checked) { if (p) { p.textContent = "Devam etmek için onaylayın."; p.classList.remove("hidden"); } ok = false; }
+        else if (p) p.classList.add("hidden");
+      });
+    }
+    return ok;
+  }
+
+  function render() {
+    steps.forEach(function (s, i) {
+      var on = (i + 1) === cur;
+      s.classList.toggle("hidden", !on);
+      s.classList.toggle("flex", on);
+    });
+    inds.forEach(function (ind, i) {
+      var done = (i + 1) <= cur;
+      ind.classList.toggle("opacity-50", !done);
+      var dot = ind.querySelector(".vf-dot");
+      dot.classList.toggle("bg-secondary-container", done);
+      dot.classList.toggle("text-on-primary", done);
+      dot.classList.toggle("bg-surface-container-high", !done);
+      dot.classList.toggle("border", !done);
+      dot.classList.toggle("text-on-surface-variant", !done);
+    });
+    prevBtn.classList.toggle("invisible", cur === 1);
+    nextBtn.classList.toggle("hidden", cur === total);
+    submitBtn.classList.toggle("hidden", cur !== total);
+    submitBtn.classList.toggle("flex", cur === total);
+  }
+
+  nextBtn.addEventListener("click", function () {
+    if (!validateStep(cur)) return;
+    if (cur < total) { cur++; render(); form.scrollIntoView({ behavior: "smooth", block: "start" }); }
+  });
+  prevBtn.addEventListener("click", function () {
+    if (cur > 1) { cur--; render(); }
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!validateStep(total)) return;
+    var fd = new FormData(form);
+    var data = {};
+    fd.forEach(function (v, k) {
+      if (data[k] === undefined) data[k] = v;
+      else if (Array.isArray(data[k])) data[k].push(v);
+      else data[k] = [data[k], v];
+    });
+    data.kvkk = !!form.querySelector('[name="kvkk"]').checked;
+    data.sartlar = !!form.querySelector('[name="sartlar"]').checked;
+    console.log("[AFKOR] Gönüllü başvurusu (demo):", data);
+    summary.textContent = JSON.stringify(data, null, 2);
+    form.classList.add("hidden");
+    success.classList.remove("hidden");
+    success.classList.add("flex");
+    success.scrollIntoView({ behavior: "smooth", block: "center" });
+  });
+
+  document.getElementById("vf-restart").addEventListener("click", function () {
+    form.reset();
+    form.querySelectorAll(".vf-err").forEach(function (p) { p.classList.add("hidden"); });
+    cur = 1; render();
+    success.classList.add("hidden"); success.classList.remove("flex");
+    form.classList.remove("hidden");
+  });
+
+  render();
+})();
+</script>
 </div>
 </main>
 <!-- Footer -->
